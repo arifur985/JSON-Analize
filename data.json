@@ -1,0 +1,35 @@
+[
+    {
+       "id": 1,
+       "name": "Arif",
+       "login": "ar.com",
+       "location":"Dhaka",
+       "image": "img/d.jfif"
+
+    },
+    {
+        "id": 2,
+        "name": "Omi",
+        "login": "oi.net",
+        "location":"Sylhet",
+        "image": "img/b.jfif"
+ 
+     },
+     {
+        "id": 3,
+        "name": "Rasel",
+        "login": "rl.com",
+        "location":"Chittagong",
+        "image": "img/c.jfif"
+ 
+     },
+     {
+      "id": 4,
+      "name": "Rafat",
+      "login": "rt.org",
+      "location":"Khulna",
+      "image": "img/a.jpg"
+
+   }
+
+]

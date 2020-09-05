@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rendering HTML File</title>
+</head>
+<body>
+    <link rel="stylesheet" type="text/css" href="style1.css">
+    <button id="button">Show Data</button>
+    <br>
+    <h1>List of Users</h1>
+    <div id="users"></div>
+    
+    <script>
+        document.getElementById('button').addEventListener('click', showData);
+        function showData() {
+            var req = new XMLHttpRequest();
+            req.open('GET', 'data.json', true);
+            req.onload = function(){
+                if(req.status==200){
+                    var users = JSON.parse(req.responseText);
+                    var display ='';
+                    for (var i in users){
+                        display += 
+                        '<div>' +
+                        '<img src="'+users[i].image+'"width="400px" height="200px">'+
+                            '<ul>' +
+                            '<li>ID:'+users[i].id+'</li>'+
+                            '<li>Name:'+users[i].name+'</li>'+
+                            '<li>LogIn:'+users[i].login+'</li>'+
+                            '<li>Location:'+users[i].location+'</li>'+
+                            '</ul>'+
+                            '</div>';
+
+                    }
+                    document.getElementById('users').innerHTML=display;
+                }
+            }
+            req.send();
+        }
+    </script>
+</body>
+</html>
